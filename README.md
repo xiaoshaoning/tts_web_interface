@@ -2,8 +2,6 @@
 
 A modern web interface for Microsoft Edge TTS text-to-speech conversion.
 
-> **中文文档**：查看 [使用说明.md](./使用说明.md) 获取详细中文使用指南 | [快速开始.md](./快速开始.md) 获取快速入门步骤
-
 ## Features
 
 - **Drag & Drop Upload**: Simply drag and drop your text files onto the upload area
@@ -55,19 +53,36 @@ http://localhost:3001
 
 7. Listen to the audio using the built-in player or download the WAV file
 
+## Batch Scripts
+
+This project includes several Windows batch scripts for convenience:
+
+- **`edge.bat`** - Command line converter: `edge filename.txt` converts text to speech using edge-tts
+- **`start-server.bat`** - Launches the web server with dependency checks
+- **`check-installation.bat`** - Tests if all required components are installed
+- **`cleanup.bat`** - Cleans up temporary upload and output directories
+
 ## Project Structure
 
 ```
-D:\English\
-├── public/                 # Frontend files
-│   ├── index.html         # Main HTML page
-│   ├── style.css          # Stylesheet
-│   └── script.js          # Frontend JavaScript
-├── server.js              # Node.js backend server
-├── package.json           # Node.js dependencies
-├── uploads/               # Temporary uploaded files (auto-created)
-├── outputs/               # Generated audio files (auto-created)
-└── README.md              # This file
+Edge-TTS-Web/
+├── public/                    # Frontend files
+│   ├── index.html            # Main HTML page
+│   ├── style.css             # Stylesheet
+│   └── script.js             # Frontend JavaScript
+├── server.js                 # Node.js backend server
+├── package.json              # Node.js dependencies
+├── .gitignore                # Git ignore rules
+├── LICENSE                   # GNU GPL v3.0 license
+├── QUICKSTART.md             # Quick start guide
+├── edge.bat                  # Command line text-to-speech converter
+├── start-server.bat          # Server launcher for Windows
+├── check-installation.bat    # Installation test tool for Windows
+├── cleanup.bat               # Temporary files cleanup tool
+├── test.txt                  # Example text file for testing
+├── uploads/                  # Temporary uploaded files (auto-created)
+├── outputs/                  # Generated audio files (auto-created)
+└── node_modules/             # Node.js dependencies (auto-created)
 ```
 
 ## API Endpoints
@@ -98,7 +113,9 @@ const port = 3001; // Change to an available port
 
 ## License
 
-MIT
+GNU General Public License v3.0
+
+This project is licensed under the GNU GPL v3.0. See the [LICENSE](./LICENSE) file for details.
 
 ## Credits
 
