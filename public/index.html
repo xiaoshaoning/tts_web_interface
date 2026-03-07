@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge-TTS Web | Text to Speech Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔊</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-icon">🔊</span>
+                <span class="logo-text">Edge-TTS Web</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Features</a>
+                <a href="#" class="nav-link">Voices</a>
+                <a href="#" class="nav-link">About</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transform Text to Speech with <span class="gradient-text">AI-Powered</span> Voices</h1>
+                <p class="hero-subtitle">Upload your English text files and convert them to natural-sounding speech using Microsoft's Edge TTS engine. Experience crystal-clear audio with studio-quality voices.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Voices Available</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50ms</div>
+                        <div class="stat-label">Fast Processing</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">HD</div>
+                        <div class="stat-label">Audio Quality</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-element el1"><i class="fas fa-file-alt"></i></div>
+                    <div class="floating-element el2"><i class="fas fa-waveform"></i></div>
+                    <div class="floating-element el3"><i class="fas fa-volume-up"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Upload Section -->
+            <section class="upload-section card">
+                <div class="section-header">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> Upload Text File</h2>
+                    <p>Drag & drop your English text file or click to browse. We support .txt, .doc, .docx, and .pdf files.</p>
+                </div>
+
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-placeholder">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drop your file here</h3>
+                        <p>or click to browse</p>
+                        <p class="upload-note">Maximum file size: 10MB</p>
+                    </div>
+                    <input type="file" id="file-input" accept=".txt,.text,.doc,.docx,.pdf">
+                </div>
+
+                <!-- Voice Selection -->
+                <div class="voice-selection">
+                    <div class="section-header">
+                        <h3><i class="fas fa-microphone-alt"></i> Voice Settings</h3>
+                        <p>Select your preferred voice style (default: en-US-MichelleNeural)</p>
+                    </div>
+                    <div class="voice-options">
+                        <div class="voice-option active" data-voice="en-US-MichelleNeural">
+                            <div class="voice-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="voice-info">
+                                <h4>Michelle</h4>
+                                <p>en-US-MichelleNeural</p>
+                                <div class="voice-tags">
+                                    <span class="tag">Natural</span>
+                                    <span class="tag">Friendly</span>
+                                    <span class="tag">Default</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-option" data-voice="en-US-GuyNeural">
+                            <div class="voice-icon">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div class="voice-info">
+                                <h4>Guy</h4>
+                                <p>en-US-GuyNeural</p>
+                                <div class="voice-tags">
+                                    <span class="tag">Professional</span>
+                                    <span class="tag">Clear</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-option" data-voice="en-GB-SoniaNeural">
+                            <div class="voice-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="voice-info">
+                                <h4>Sonia</h4>
+                                <p>en-GB-SoniaNeural</p>
+                                <div class="voice-tags">
+                                    <span class="tag">British</span>
+                                    <span class="tag">Elegant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary btn-large" id="convert-btn">
+                        <i class="fas fa-magic"></i> Convert to Speech
+                    </button>
+                    <button class="btn btn-outline btn-large" id="clear-btn">
+                        <i class="fas fa-trash-alt"></i> Clear All
+                    </button>
+                </div>
+            </section>
+
+            <!-- File Info & Results -->
+            <div class="results-section">
+                <!-- File Info Card -->
+                <div class="card file-info-card">
+                    <div class="section-header">
+                        <h3><i class="fas fa-info-circle"></i> File Information</h3>
+                    </div>
+                    <div class="file-info" id="file-info">
+                        <div class="no-file">
+                            <i class="fas fa-file-import"></i>
+                            <p>No file selected</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Card -->
+                <div class="card results-card">
+                    <div class="section-header">
+                        <h3><i class="fas fa-music"></i> Conversion Results</h3>
+                    </div>
+                    <div class="results-content" id="results-content">
+                        <div class="no-results">
+                            <i class="fas fa-headphones"></i>
+                            <p>Your audio will appear here after conversion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>Processing your file</h3>
+                    <p>Converting text to speech with edge-tts...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-icon">🔊</span>
+                <span class="logo-text">Edge-TTS Web</span>
+                <p class="footer-description">A modern web interface for Microsoft Edge TTS text-to-speech conversion.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Voices</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Tutorials</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Edge-TTS Web. Made with <i class="fas fa-heart"></i> for text-to-speech enthusiasts.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

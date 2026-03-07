@@ -1,0 +1,6 @@
+Welcome to Edge-TTS Web Interface.
+This is a test text file for text-to-speech conversion.
+The system uses Microsoft Edge TTS engine to generate natural sounding speech.
+You can upload any English text file and convert it to audio.
+The default voice is en-US-MichelleNeural, but you can choose other voices.
+Enjoy the seamless conversion experience!

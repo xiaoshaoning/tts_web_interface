@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+uploads/
+outputs/
+
+# Generated audio files
+*.wav
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Text files (ignore all, except test/example files)
+*.txt
+
+# User uploaded content (personal text files)
+# Note: Example/test files are committed, but user files should be ignored
+!test.txt
+!example*.txt
+
+# Package files
+package-lock.json
+
+# OS generated files
+._*
