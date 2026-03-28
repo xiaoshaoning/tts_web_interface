@@ -4,7 +4,8 @@
   "description": "Web interface for edge-tts text-to-speech conversion",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "stop": "scripts\\stop-server.bat"
   },
   "dependencies": {
     "express": "^4.18.2",
