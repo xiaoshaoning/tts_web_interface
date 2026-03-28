@@ -10,6 +10,7 @@ outputs/
 
 # Generated audio files
 *.wav
+!samples/*.wav
 
 # Editor and IDE files
 .vscode/
@@ -44,9 +45,10 @@ temp/
 # Note: Example/test files are committed, but user files should be ignored
 !test.txt
 !example*.txt
+!samples/*.txt
 
 # Package files
-package-lock.json
+# package-lock.json  # Keep in repository for consistent dependencies
 
 # OS generated files
 ._*

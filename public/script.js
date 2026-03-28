@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // State
     let selectedFile = null;
-    let selectedVoice = 'en-US-MichelleNeural';
+    let selectedVoice = '';
     let currentAudio = null;
     let audioPlayer = null;
 
